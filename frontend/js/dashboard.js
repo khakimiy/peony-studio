@@ -37,8 +37,7 @@ async function apiCall(url, method = 'GET', body = null) {
     }
   };
   if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(`http://127.0.0.1:5000/api${url}`, opts);
-  if (res.status === 401) { logout(); return null; }
+const res = await fetch(`http://localhost:5000/api${url}`, opts);  if (res.status === 401) { logout(); return null; }
   return await res.json();
 }
 

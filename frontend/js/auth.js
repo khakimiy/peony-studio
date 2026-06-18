@@ -1,4 +1,4 @@
-const API = 'http://127.0.0.1:5000/api';
+const API = '/api';
 
 // Token saqlash
 function saveToken(token, user) {
@@ -15,10 +15,8 @@ function logout() {
   window.location.href = 'index.html';
 }
 
-// Login sahifasida token bo'lsa dashboard ga o'tish
-if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
-  if (getToken()) window.location.href = 'dashboard.html';
-}
+// Eslatma: avval bu yerda token bo'lsa avtomatik dashboard'ga o'tkazadigan kod bor edi.
+// Endi olib tashlandi — login sahifasi har doim ko'rsatiladi, har safar login qilish kerak.
 
 // Toggle parol ko'rish
 function togglePass() {

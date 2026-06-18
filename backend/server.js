@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
@@ -9,6 +10,9 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+
+// Frontend'ni shu server orqali xizmat ko'rsatish (backend papkasidan bir bosqich yuqoridagi frontend papkasi)
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Har bir so'rovni logga yozish (nima kelganini ko'rish uchun)
 app.use((req, res, next) => {
@@ -27,7 +31,7 @@ app.use('/api/waste', require('./routes/waste'));
 app.use('/api/finance', require('./routes/finance'));
 app.use('/api/report', require('./routes/report'));
 
-app.get('/', (req, res) => {
+app.get('/api/status', (req, res) => {
   res.json({ message: '🌸 Peony Studio API ishlayapti!' });
 });
 
