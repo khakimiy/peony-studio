@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peony Flowers Studio — Kirish</title>
+<link rel="stylesheet" href="style/style.css">
+</head>
+<body class="login-page">
+
+<div class="login-wrap">
+  <div class="login-left">
+    <div class="login-brand">
+      <div class="brand-icon">🌸</div>
+      <h1>Peony Flowers Studio</h1>
+      <p>Professional boshqaruv tizimi</p>
+    </div>
+    <div class="login-features">
+      <div class="feature-item">🌺 Gullar ombori boshqaruvi</div>
+      <div class="feature-item">💐 Buket tayyorlash tizimi</div>
+      <div class="feature-item">📋 Buyurtmalar kuzatuvi</div>
+      <div class="feature-item">🎁 Suvenir va shokoladlar</div>
+      <div class="feature-item">👥 Xodimlar boshqaruvi</div>
+    </div>
+  </div>
+
+  <div class="login-right">
+    <div class="login-box">
+      <div class="login-logo">🌸</div>
+      <h2>Tizimga kirish</h2>
+      <p class="login-sub">Foydalanuvchi ma'lumotlaringizni kiriting</p>
+
+      <div id="login-alert" class="alert" style="display:none"></div>
+
+      <div class="form-group">
+        <label>Foydalanuvchi nomi</label>
+        <div class="input-wrap">
+          <span class="input-icon">👤</span>
+          <input type="text" id="username" placeholder="username" autocomplete="username">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Parol</label>
+        <div class="input-wrap">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+          <button class="eye-btn" onclick="togglePass()" id="eye-btn">👁</button>
+        </div>
+      </div>
+
+      <button class="btn-login" onclick="login()" id="login-btn">
+        <span id="login-text">Kirish</span>
+        <span id="login-spin" style="display:none">⏳</span>
+      </button>
+
+      <div class="login-footer">
+        <span>🌸 Peony Flowers Studio © 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
