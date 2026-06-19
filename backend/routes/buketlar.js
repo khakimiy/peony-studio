@@ -51,7 +51,7 @@ router.post('/tayyorla', auth, async (req, res) => {
   // Insert only fields present in the DB schema to avoid schema cache errors
   const { data: buket, error: bError } = await supabase
     .from('buketlar')
-    .insert([{ nomi: buket_nomi }])
+    .insert([{ nomi: buket_nomi, miqdor: miqdor || 1, tayyorlash_foiz: foiz || 0, narx_uzs }])
     .select()
     .single();
 
